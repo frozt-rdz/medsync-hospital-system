@@ -7,6 +7,8 @@ module com.medsync.desktop.app {
 
     opens com.medsync.desktop.app to javafx.fxml;
     opens com.medsync.controllers to javafx.fxml;
+    
+    opens com.medsync.models to javafx.base;
 
     exports com.medsync.desktop.app;
     exports com.medsync.controllers;

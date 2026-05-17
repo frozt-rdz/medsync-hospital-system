@@ -1,18 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml"
-            style="-fx-background-color: white;">
+            fx:controller="com.medsync.controllers.PatientsController">
 
     <children>
 
-        <Label text="Módulo de Pacientes"
-               layoutX="40"
-               layoutY="40"
-               style="-fx-font-size: 28px;
-                      -fx-font-weight: bold;"/>
+        <VBox spacing="10"
+              prefWidth="800"
+              prefHeight="600"
+              AnchorPane.topAnchor="10"
+              AnchorPane.leftAnchor="10"
+              AnchorPane.rightAnchor="10"
+              AnchorPane.bottomAnchor="10">
+
+            <Label text="Gestión de Pacientes"/>
+
+            <HBox spacing="10">
+
+                <TextField
+                        fx:id="txtNombre"
+                        promptText="Nombre"/>
+
+                <TextField
+                        fx:id="txtApellido"
+                        promptText="Apellido"/>
+
+                <TextField
+                        fx:id="txtTelefono"
+                        promptText="Teléfono"/>
+
+                <TextField
+                        fx:id="txtEmail"
+                        promptText="Email"/>
+
+                <Button
+                        text="Guardar"
+                        onAction="#guardarPaciente"/>
+            </HBox>
+
+            <TableView fx:id="tablePacientes"
+                       VBox.vgrow="ALWAYS">
+
+                <columns>
+
+                    <TableColumn
+                            fx:id="colId"
+                            text="ID"/>
+
+                    <TableColumn
+                            fx:id="colNombre"
+                            text="Nombre"/>
+
+                    <TableColumn
+                            fx:id="colApellido"
+                            text="Apellido"/>
+
+                    <TableColumn
+                            fx:id="colTelefono"
+                            text="Teléfono"/>
+
+                    <TableColumn
+                            fx:id="colEmail"
+                            text="Email"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
 
     </children>
 
