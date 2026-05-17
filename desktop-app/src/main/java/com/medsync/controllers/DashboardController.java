@@ -25,11 +25,47 @@ public class DashboardController {
         loadView("home.fxml");
     }
 
+    @FXML
+    public void showHome() {
+        loadView("home.fxml");
+    }
+
+    @FXML
+    public void showPatients() {
+        loadView("patients.fxml");
+    }
+
+    @FXML
+    public void showAppointments() {
+        loadView("appointments.fxml");
+    }
+
+    @FXML
+    public void showDoctors() {
+        loadView("doctors.fxml");
+    }
+
+    @FXML
+    public void showInventory() {
+        loadView("inventory.fxml");
+    }
+
+    @FXML
+    public void showUsers() {
+        loadView("users.fxml");
+    }
+
     public void loadView(String fxml) {
 
         try {
-
-            AnchorPane view = FXMLLoader.load(getClass().getResource("/com/medsync/desktop/app/views/" + fxml));
+            
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource(
+                            "/com/medsync/desktop/app/views/" + fxml
+                    )
+            );
+            
+            AnchorPane view = loader.load();
 
             contentPane.getChildren().setAll(view);
 

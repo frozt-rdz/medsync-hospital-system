@@ -37,22 +37,28 @@
                      -fx-padding: 20;">
 
             <Button text="Dashboard"
-                    prefWidth="180"/>
+                    prefWidth="180"
+                    onAction="#showHome"/>
 
             <Button text="Pacientes"
-                    prefWidth="180"/>
+                    prefWidth="180"
+                    onAction="#showPatients"/>
 
             <Button text="Médicos"
-                    prefWidth="180"/>
+                    prefWidth="180"
+                    onAction="#showDoctors"/>
 
             <Button text="Citas"
-                    prefWidth="180"/>
+                    prefWidth="180"
+                    onAction="#showAppointments"/>
 
             <Button text="Inventario"
-                    prefWidth="180"/>
+                    prefWidth="180"
+                    onAction="#showInventory"/>
 
             <Button text="Usuarios"
-                    prefWidth="180"/>
+                    prefWidth="180"
+                    onAction="#showUsers"/>
 
             <Button text="Cerrar Sesión"
                     prefWidth="180"/>
@@ -65,7 +71,7 @@
     <center>
 
         <AnchorPane fx:id="contentPane"
-                style="-fx-background-color: #ECF0F1;" />
+                    style="-fx-background-color: #ECF0F1;" />
 
     </center>
 
