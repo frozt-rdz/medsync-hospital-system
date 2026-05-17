@@ -7,8 +7,13 @@ package com.medsync.controllers;
 import com.medsync.repositories.UsuarioRepository;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class LoginController {
 
@@ -30,9 +35,43 @@ public class LoginController {
         boolean success = repository.login(username, password);
 
         if (success) {
-            System.out.println("Login exitoso.");
+
+            try {
+
+                FXMLLoader loader = new FXMLLoader(
+                        getClass().getResource(
+                                "/com/medsync/desktop/app/dashboard.fxml"
+                        )
+                );
+
+                Parent root = loader.load();
+
+                Stage stage = (Stage) txtUsername.getScene().getWindow();
+
+                stage.setScene(new Scene(root));
+
+                stage.show();
+
+                System.out.println("Dashboard abierto.");
+
+            } catch (Exception e) {
+
+                System.out.println("Error al abrir dashboard");
+
+                e.printStackTrace();
+            }
+
         } else {
-            System.out.println("Usuario o contraseña incorrectos.");
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+
+            alert.setTitle("Error");
+
+            alert.setHeaderText(null);
+
+            alert.setContentText("Usuario o contraseña incorrectos.");
+
+            alert.showAndWait();
         }
     }
 }
