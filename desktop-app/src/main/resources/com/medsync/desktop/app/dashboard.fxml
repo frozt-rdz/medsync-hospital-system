@@ -65,19 +65,7 @@
     <center>
 
         <AnchorPane fx:id="contentPane"
-                    style="-fx-background-color: #ECF0F1;">
-
-            <children>
-
-                <Label text="Bienvenido al Dashboard"
-                       layoutX="40"
-                       layoutY="40"
-                       style="-fx-font-size: 28px;
-                              -fx-font-weight: bold;"/>
-
-            </children>
-
-        </AnchorPane>
+                style="-fx-background-color: #ECF0F1;" />
 
     </center>
 
