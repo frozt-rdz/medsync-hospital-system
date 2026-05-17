@@ -60,7 +60,7 @@ public class PatientsController {
 
     private final ObservableList<Paciente> listaPacientes =
             FXCollections.observableArrayList();
-
+    
     @FXML
     public void initialize() {
 
@@ -70,7 +70,7 @@ public class PatientsController {
     }
 
     public void configurarTabla() {
-
+         
         colId.setCellValueFactory(
                 new PropertyValueFactory<>("id")
         );
@@ -89,7 +89,7 @@ public class PatientsController {
 
         colEmail.setCellValueFactory(
                 new PropertyValueFactory<>("email")
-        );
+        );   
     }
 
     public void cargarPacientes() {

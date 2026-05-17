@@ -65,7 +65,7 @@
                     <TableColumn
                             fx:id="colEmail"
                             text="Email"/>
-
+                    
                 </columns>
 
             </TableView>
