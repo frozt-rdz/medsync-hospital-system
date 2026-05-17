@@ -5,6 +5,7 @@
 package com.medsync.controllers;
 
 import com.medsync.repositories.UsuarioRepository;
+import com.medsync.utils.SceneManager;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,17 +39,9 @@ public class LoginController {
 
             try {
 
-                FXMLLoader loader = new FXMLLoader(
-                        getClass().getResource(
-                                "/com/medsync/desktop/app/dashboard.fxml"
-                        )
-                );
-
-                Parent root = loader.load();
-
                 Stage stage = (Stage) txtUsername.getScene().getWindow();
 
-                stage.setScene(new Scene(root));
+                SceneManager.switchScene(stage, "dashboard.fxml");
 
                 stage.show();
 
